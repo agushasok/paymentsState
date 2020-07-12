@@ -1,0 +1,19 @@
+td {
+  text-align: center;
+  border: black solid 1px;
+
+  .remove-button {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: grey;
+    color: white;
+    transform: rotate(45deg);
+    transition: .2s;
+
+    &:hover {
+      background-color: red;
+    }
+  }
+}

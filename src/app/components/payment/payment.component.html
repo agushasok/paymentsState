@@ -1,3 +1,8 @@
-<p>
-  payment works!
-</p>
+<td>{{payment.title}}</td>
+<td>{{payment.dayCost}}</td>
+<td *ngFor="let month of payment.months" [formGroup]="form">
+  <input type="checkbox" [formControlName]="month.systemName">
+</td>
+<td>
+  <button class="remove-button" (click)="remove(payment.id)">+</button>
+</td>

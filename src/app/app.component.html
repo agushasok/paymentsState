@@ -1,18 +1,39 @@
 <h1 class="title">Состояние платежей</h1>
 
-<input type="text" placeholder="Наименование платежа *">
-<input type="number" placeholder="Стоимость за день">
-<button>Добавить</button>
+<div class="adding-form" [formGroup]="addForm">
+  <input
+    formControlName="title"
+    type="text"
+    placeholder="Наименование платежа *"
+    class="adding-form__input">
+  <input
+    formControlName="dayCost"
+    type="number"
+    placeholder="Стоимость за день"
+    class="adding-form__input">
+  <button
+    class="adding-form__add-button"
+    (click)="addPayment()"
+    [disabled]="addForm.invalid">
+    Добавить
+  </button>
+</div>
 
-<table>
+<table class="table" [formGroup]="form">
   <tr>
-    <th>Наименование платежа</th>
-    <th>Стоимость</th>
-    <th></th>
-    <th>Удалить</th>
+    <th class="table__name">Наименование платежа</th>
+    <th class="table__cost">Стоимость</th>
+    <th *ngFor="let month of months" class="table__month">{{month.title}}</th>
+    <th class="table__delete">Удалить</th>
   </tr>
 
-  <tr>
-
+  <tr
+    *ngFor="let payment of payments; odd as isOdd"
+    [class.table__odd-row]="isOdd"
+    formControlName="{{payment.id}}"
+    app-payment
+    (delete)="deletePayment($event)">
   </tr>
 </table>
+
+<p class="total">Израсходовано средств: <span class="total__cost">{{totalCost}}</span></p>

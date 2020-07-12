@@ -2,3 +2,49 @@
   font-weight: 500;
   font-size: 25px;
 }
+
+.adding-form {
+  margin-bottom: 25px;
+
+  &__input {
+    margin-right: 20px;
+  }
+}
+
+.table {
+  width: 90%;
+  border: black solid 1px;
+  border-collapse: collapse;
+
+  th {
+    font-weight: normal;
+    border: black solid 1px;
+    background-color: darkgrey;
+  }
+
+  tr {
+    height: 35px;
+  }
+
+  &__odd-row {
+    background-color: aqua;
+  }
+
+  &__name {
+    width: 20%;
+  }
+
+  &__cost {
+    width: 12%;
+  }
+
+  &__month {
+    width: 5%;
+  }
+}
+
+.total {
+  &__cost {
+    font-weight: 600;
+  }
+}

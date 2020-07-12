@@ -1,14 +1,15 @@
-export const MONTHS = {
-  jan: 31,
-  feb: 28,
-  mar: 31,
-  apr: 30,
-  may: 31,
-  jun: 30,
-  jul: 31,
-  aug: 31,
-  sep: 30,
-  oct: 31,
-  nov: 30,
-  dec: 31
-};
+// Константа с инфо о месяцах
+export const MONTHS = [
+  { systemName: 'jan', days: 31, title: 'Янв' },
+  { systemName: 'feb', days: 28, title: 'Фев' },
+  { systemName: 'mar', days: 31, title: 'Мар' },
+  { systemName: 'apr', days: 30, title: 'Апр' },
+  { systemName: 'may', days: 31, title: 'Май' },
+  { systemName: 'jun', days: 30, title: 'Июн' },
+  { systemName: 'jul', days: 31, title: 'Июл' },
+  { systemName: 'aug', days: 31, title: 'Авг' },
+  { systemName: 'sep', days: 30, title: 'Сен' },
+  { systemName: 'oct', days: 31, title: 'Окт' },
+  { systemName: 'nov', days: 30, title: 'Ноя' },
+  { systemName: 'dec', days: 31, title: 'Дек' },
+];

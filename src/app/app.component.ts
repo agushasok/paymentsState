@@ -41,9 +41,9 @@ export class AppComponent implements OnInit, OnDestroy {
   // Получит список платежей
   public getPayments() {
     this.subscriptions.add(
-      this.apiService.getList().subscribe(data => {
+      this.apiService.getList().subscribe((data: IPayment[]) => {
         this.payments = data;
-        data.forEach(payment => {
+        data.forEach((payment: IPayment) => {
           this.form.addControl(`${payment.id}`, new FormControl(payment));
         });
       })
